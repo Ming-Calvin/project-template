@@ -1,0 +1,44 @@
+{
+  "env": {
+    "browser": true, // 代码运行在浏览器环境中
+    "es2021": true, // 支持 ECMAScript 2021 语法
+    "node": true // 代码运行在 Node.js 环境中
+  },
+  "extends": [
+    "eslint:recommended", // 使用 ESLint 官方推荐的规则
+    "plugin:vue/vue3-essential", // 使用 Vue 3 的基本规则集
+    "plugin:@typescript-eslint/recommended", // 使用 TypeScript 的推荐规则集
+    "prettier" // 关闭与 Prettier 冲突的 ESLint 规则
+  ],
+  "parser": "vue-eslint-parser", // 使用 @typescript-eslint/parser 解析 TypeScript 代码
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser", // 解析 <script> 部分的 TypeScript 代码
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "vue", // 支持 Vue.js 特性
+    "@typescript-eslint", // 支持 TypeScript 特性
+    "prettier" // 使用 Prettier 来格式化代码
+  ],
+  "rules": {
+    "semi": ["off"], // 不强制使用分号
+    "quotes": ["off"], // 单引号和双引号均可
+    "prettier/prettier": "error", // 将 Prettier 格式问题视为错误
+    "no-console": "warn", // 警告使用 console 语句
+    "no-debugger": "warn", // 警告使用 debugger 语句
+    "@typescript-eslint/no-unused-vars": [
+      "warn", // 警告未使用的变量
+      {
+        "vars": "all", // 检查所有变量
+        "args": "after-used", // 仅在参数使用后检查未使用的参数
+        "ignoreRestSiblings": false // 不忽略剩余属性的兄弟节点的检查
+      }
+    ],
+    "@typescript-eslint/no-var-requires": "off", // 允许使用 require 语句
+    "vue/multi-word-component-names": "off" // 允许单词组件名称
+  }
+}
