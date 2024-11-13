@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5", // 指定 ECMAScript 目标版本
+    "module": "esnext", // 指定使用的模块代码生成方式
+    "baseUrl": "./", // 基础目录，用于解析非相对模块路径
+    "moduleResolution": "node", // 模块解析策略，确保能找到 node_modules 中的模块
+    "paths": {
+      "@/*": [
+        "src/*" // 配置路径别名，使用 @ 表示 src 目录
+      ]
+    },
+    "lib": [
+      "esnext", // 包含最新的 ECMAScript 标准库
+      "dom", // 包含 DOM API 标准库
+      "dom.iterable", // 包含可迭代的 DOM 接口
+      "scripthost" // 包含 script host 对象模型库
+    ]
+  }
+}
